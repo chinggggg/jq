@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5</title>
+</head>
+
+<body>
+    <main>
+        <div class="wrap">
+            <div class="box">box01</div>
+            <div class="box">box02 </div>
+            <div class="box">box03</div>
+            <div class="box">box04</div>
+            <div class="box">box05</div>
+            <div class="box">box06</div>
+            <div class="box">box07</div>
+            <div class="box">box08</div>
+            <div class="box">box09</div>
+            <div class="box">box10</div>
+        </div>
+        <div class="box">
+            <p>ttttt</p>
+            <h1>hhhhh</h1>
+        </div>
+        <div class="box">
+            <h1>hhhhh</h1>
+        </div>
+
+
+    </main>
+    <div class="wrap">
+        <div class="box">box12</div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+
+        $('.wrap:first-child').css('background', 'yellow')
+        $('h1:only-child').css('background', 'blue')
+        // h1:only-child 節點裡只能有一個他才會被選到
+        $('p:only-of-type').css('background', 'red')
+        // p:only-of-type 節點裡好幾個中只有一項單獨是他就會被選到
+        $('div:has(p)').css('background', '#ada')
+
+    </script>
+
+</body>
+
+</html>

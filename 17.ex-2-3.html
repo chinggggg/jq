@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex-2-3</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            width: 33%;
+            height: 25%;
+            padding: 2%;
+            color: #444;
+            font-weight: 400;
+            border: 1px solid #fff;
+
+        }
+
+        .bdc {
+            background: rgb(173, 216, 230);
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="box bdc ">box01</div>
+        <div class="box autobg ">box02</div>
+        <div class="box autobg ">box03</div>
+        <div class="box autobg ">box04</div>
+        <div class="box autobg ">box05</div>
+        <div class="box autobg ">box06</div>
+        <div class="box autobg ">box07</div>
+        <div class="box autobg ">box08</div>
+        <div class="box autobg ">box09</div>
+        <div class="box autobg ">box10</div>
+        <div class="box autobg ">box11</div>
+        <div class="box autobg ">box12</div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script>
+        function getRandomInt(max) {
+            return Math.floor(Math.random() * Math.floor(max - 50) + 100);
+        }
+
+        function getRBGA() {
+            return `linear-gradient(135deg, rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},.5), rgba(${getRandomInt(256)},${getRandomInt(256)},${getRandomInt(256)},.8)`
+        }
+
+        const elements = document.querySelectorAll('.autobg');
+
+        Array.from(elements).forEach((element, index) => {
+            element.style.backgroundImage = getRBGA();
+        });
+
+        // $('.autobg').each(function (index, currentElement) {
+        //     currentElement.style.backgroundImage = getRBGA();
+        // });
+
+        // 只有物件效果  
+        // $('.box:gt(4)').css('background', 'lightblue');
+
+        // 只點擊一次
+        // $('.box').click(function () {
+        //     $(this).nextAll().css('background', 'lightblue');
+        // })
+
+        $('.box').click(function () {
+            if ($(this).css('background') == 'rgb(173, 216, 230)') {
+                console.log()
+            }
+
+
+
+            // $(this).css('background', 'lightblue').nextAll().css('background', 'lightblue');
+        })
+
+    </script>
+
+</body>
+
+
+</html>

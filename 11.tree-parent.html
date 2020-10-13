@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11.tree-parent</title>
+</head>
+
+<body>
+    <div class="warp">
+        <ul class="box1">
+            <li>item-01</li>
+            <li>item-02</li>
+            <li>item-03
+                <ul class="box2">
+                    <li class="item2">item-001</li>
+                    <li>item-002</li>
+                    <li>item-003
+                        <ul class="box3">
+                            <li class="item1">item-0001</li>
+                            <li>item-0002</li>
+                            <li>item-0003</li>
+                            <li>item-0004</li>
+                            <li>item-0005</li>
+                        </ul>
+                    </li>
+                    <li>item-004</li>
+                </ul>
+            </li>
+            <li>item-04</li>
+            <li>item-05</li>
+            <li>item-06</li>
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        // $('.item1').closest('ul').css('background', 'yellow');
+        // $('.item1').parents('.box2').css('background', 'red');
+        // $('.item1').parentsUntil('.box2').css('background', 'yellow');
+        // $('.item1').next('li').css('background', 'green');
+        $('.item2').nextAll('li').css('background', 'green');
+
+
+
+    </script>
+</body>
+
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex-1</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <style>
+        /* .form-check {
+            background-color: #666;
+        } */
+
+        bg_red {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container p-5">
+        <table class="table table-bordered">
+
+            <tbody>
+                <tr>
+                    <th scope="row d-flex">
+                        <div class="form-check">
+                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox"
+                                value="option1" aria-label="...">
+                            <label for="blankCheckbox"></label>
+                        </div>
+                    </th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <div class="form-check">
+                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox"
+                                value="option1" aria-label="...">
+                            <label for="blankCheckbox"></label>
+                        </div>
+                    </th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <div class="form-check">
+                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox"
+                                value="option1" aria-label="...">
+                            <label for="blankCheckbox"></label>
+                        </div>
+                    </th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">
+                        <div class="form-check">
+                            <input class="form-check-input position-static" type="checkbox" id="blankCheckbox"
+                                value="option1" aria-label="...">
+                            <label for="blankCheckbox"></label>
+                        </div>
+                    </th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td>@mdo</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // 只有物件效果
+        // $(':checked').parents('tr').css('background', 'red');
+
+        // 加入function方法
+        // $('.form-check-input').click(function () {
+        //     $(this).parents('tr').css({
+        //         'background': '#EC5B5B',
+        //         'color': 'white'
+        //     })
+
+
+        // })
+
+        // 其他寫法 !!!!!!!!!!!!!!!!!!
+        //  $("input[type = 'checkbox']").click(function () {
+        //             console.log($(this).prop('checked'))
+        //         })
+
+
+        // again
+
+        $('.form-check-input').click(function () {
+            if ($(this).prop('checked')) {
+                console.log('checked')
+
+                // .closest也可以
+                $(this).parents('tr').css({
+                    'background': '#CAA58A',
+                    'color': 'white'
+                })
+            } else {
+                console.log('unchecked')
+                $(this).parents('tr').css({
+                    'background': 'none',
+                    'color': '#000'
+                })
+            }
+
+        })
+
+        // .siblings().css({
+        //         'background': 'none',
+        //         'color': '#000'
+        //     })
+
+        // 再次點擊擊測試失敗 :(
+        // $('.form-check-input').click(function () {
+        //     if ({
+        //         'background': 'none',
+        //         'color': '#000'
+        //     }) {
+        //         $(this).parents('tr').css({
+        //             'background': '#EC5B5B',
+        //             'color': 'white'
+        //         })
+        //     } else {
+        //         $(tr).css({
+        //             'background': 'none',
+        //             'color': '#000'
+        //         })
+        //     }
+        // });
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

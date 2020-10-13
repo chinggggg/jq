@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="warp">
+        <ul class="box1">
+            <li>item01</li>
+            <li>item02</li>
+            <li>item03
+                <ul class="box2">
+                    <li>item001</li>
+                    <li>item002</li>
+                    <li>item003</li>
+                    <li>item004</li>
+                </ul>
+            </li>
+            <li>item04</li>
+            <li>item05</li>
+            <li>item06</li>
+        </ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        // $('.box1').children('li').css('background', 'yellow')
+        $('.box1').finds('li').css('background', 'yellow')
+    </script>
+</body>
+
+</html>
