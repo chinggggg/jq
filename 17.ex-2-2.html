@@ -33,7 +33,7 @@
         }
 
         .bdc {
-            background: linear-gradient(lightblue, lightblue);
+            background: lightblue;
             opacity: 1;
             z-index: 100;
 
@@ -43,7 +43,7 @@
 
 <body>
 
-    <div class="container">
+    <!-- <div class="container">
         <div class="box ">box01</div>
         <div class="box  ">box02</div>
         <div class="box  ">box03</div>
@@ -56,9 +56,9 @@
         <div class="box  ">box10</div>
         <div class="box  ">box11</div>
         <div class="box  ">box12</div>
-    </div>
+    </div> -->
 
-    <!-- <div class="container">
+    <div class="container">
         <div class="box autobg ">box01</div>
         <div class="box autobg  ">box02</div>
         <div class="box autobg  ">box03</div>
@@ -70,8 +70,9 @@
         <div class="box autobg  ">box09</div>
         <div class="box autobg  ">box10</div>
         <div class="box autobg  ">box11</div>
-        <div class="box autobg  ">box12</div>
-    </div> -->
+        <div class="box auto
+        bg  ">box12</div>
+    </div>
 
 
 
@@ -119,9 +120,15 @@
         //     $(this).nextAll().css('background', 'lightblue');
         // })
 
+
         $('.box').click(function () {
-            $(this).toggleClass('bdc').nextAll().toggleClass('bdc');
+            $(this).addClass('bdc').nextAll().addClass('bdc');
         })
+
+        // $('.box').click(function () {
+        //     $(this).css('background', 'lightblue').nextAll().css('background', 'lightblue');
+        // })
+
 
     </script>
 

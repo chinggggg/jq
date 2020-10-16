@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex8 box move</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+
+    <style>
+        .wrapper {
+            width: 800px;
+            height: 400px;
+            background-color: #ccc;
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+            top: 0;
+            left: 0;
+        }
+
+        .bar {
+            top: 100px;
+            left: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper position-relative mx-auto mt-2">
+        <div class="box position-absolute"></div>
+    </div>
+    <div class="bar py-3 text-center position-absolute ">
+
+        <div class="py-1">
+            <button id="up" class="btn btn-info">
+                <i class="fas fa-caret-up"></i>
+            </button>
+        </div>
+
+        <button id="left" class="btn btn-info mx-3">
+            <i class="fas fa-caret-left"></i>
+        </button>
+
+        <button id="right" class="btn btn-info mx-3">
+            <i class="fas fa-caret-right"></i>
+        </button>
+
+        <div class="py-1">
+            <button id="down" class="btn btn-info">
+                <i class="fas fa-caret-down"></i>
+            </button>
+        </div>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+
+        // $("#right").on('click', function () {
+        //     $('.box').css('left', '+=120');
+        //     console.log($('.box').css('left'))
+        //     // if ($(this).css('left',)) {
+        //     //   
+        //     // }
+
+        // });
+
+        // let i = parseInt($('.box').css('left'))
+
+
+        // let boxTop = ($('.box').css('top'))
+
+        // $("#right").on('click', function () {
+        //     $('.box').css('left', '+=120');
+        // });
+        // $("#left").on('click', function () {
+        //     $('.box').css('left', '-=120');
+        // });
+
+        // $("#up").on('click', function () {
+        //     if (boxTop > 0) {
+        //         $('.box').css('top', '-=120');
+        //     }
+        //     // console.log($('.box').css('top'))
+        // });
+        // $("#down").on('click', function () {
+        //     $('.box').css('top', '+=120');
+        // });
+        //   --------------------------
+        let boxleft = ($('.box').css('left'))
+        let boxTop = ($('.box').css('top'))
+
+        $("#right").on('click', function () {
+            // let i = parseInt($('.box').css('left'))
+            boxleft = parseInt($('.box').css('left'))
+            if (boxleft < 700) {
+                $('.box').css('left', '+=50');
+            }
+            // else {
+            //     $("#right").off('click');
+            // }
+
+
+        });
+
+        $("#left").on('click', function () {
+
+            boxleft = parseInt($('.box').css('left'))
+            if (boxleft > 0) {
+                $('.box').css('left', '-=50');
+            }
+            // else {
+            //     $("#left").off('click');
+            // }
+
+        });
+
+        $("#up").on('click', function () {
+
+            boxTop = parseInt($('.box').css('top'))
+            if (boxTop > 0) {
+                $('.box').css('top', '-=50');
+            }
+
+        });
+
+
+        $("#down").on('click', function () {
+
+            boxTop = parseInt($('.box').css('top'))
+            if (boxTop < 300) {
+                $('.box').css('top', '+=50');
+            }
+            console.log($('.box').css('top'))
+        });
+
+        $(document).on('Keydown', function (event) {
+            console.log(event.which)
+
+
+
+        })
+
+
+
+
+
+
+
+    //   --------------------------
+        // $("#right").on('click', function () {
+        //     $('.box').css('left', '+=120');
+        // });
+        // $("#left").on('click', function () {
+        //     $('.box').css('left', '-=120');
+        // });
+        // $("#up").on('click', function () {
+        //     $('.box').css('top', '-=120');
+        // });
+        // $("#down").on('click', function () {
+        //     $('.box').css('top', '+=120');
+        // });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1.ss {
+            font-size: 30px;
+        }
+
+        p.ss {
+            font-size: 14px;
+        }
+
+        h1.mm {
+            font-size: 40px;
+        }
+
+        p.mm {
+            font-size: 20px;
+        }
+
+        h1.ll {
+            font-size: 50px;
+        }
+
+        p.ll {
+            font-size: 30px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+        }
+
+
+        button.active {
+            background-color: cornflowerblue;
+        }
+
+        .wrapper {
+            padding: 20px;
+            width: 600px;
+            margin: 50px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <button class="active" id="ss">S</button>
+        <button id="mm">M</button>
+        <button id="ll">L</button>
+
+        <h1 class="ss">jQuery</h1>
+        <p class="ss">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima doloremque facere, commodi,
+            cupiditate
+            sapiente
+            ex maxime repudiandae, facilis optio voluptas dolorum. Neque animi ipsam, atque explicabo earum nesciunt cum
+            sit!
+            <br><br>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima doloremque facere, commodi, cupiditate
+            sapiente
+            ex maxime repudiandae, facilis optio voluptas dolorum. Neque animi ipsam, atque explicabo earum nesciunt cum
+            sit!
+        </p>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $('#ss').on('click', function () {
+            $('h1').addClass('ss').removeClass()
+            $('p').addClass('ss').removeClass()
+            $('button').removeClass('active')
+            $(this).addClass('active')
+
+        })
+        $('#mm').on('click', function () {
+            $('h1').addClass('mm').removeClass('ss ll')
+            $('p').addClass('mm').removeClass('ss ll')
+            $('button').removeClass('active')
+            $(this).addClass('active')
+        })
+        $('#ll').on('click', function () {
+            $('h1').addClass('ll').removeClass('ss mm')
+            $('p').addClass('ll').removeClass('ss mm')
+            $('button').removeClass('active')
+            $(this).addClass('active')
+        })
+    </script>
+</body>
+
+</html>
