@@ -49,6 +49,8 @@
             position: fixed;
             top: 0;
             left: 0;
+            right: 0;
+            /* 左右都設0寬會被撐開 */
             box-shadow: 0px 2px 6px rgba(0, 0, 0, .1);
 
 
@@ -115,29 +117,52 @@
 
         // console.log('box', $('.box').offset(), $('.box').position())
 
-
-
-
         $(window).on('scroll', function () {
-            console.log('scrolltop', $(this).scrollTop());
+            // console.log('scrolltop', $(this).scrollTop());
             let scrolltop = $(this).scrollTop()
+            let box1 = $('.box1').offset().top
+            let box2 = $('.box2').offset().top
 
             $('.box1').removeClass('fixed');
             $('.box2').removeClass('fixed');
 
-            if (scrolltop >= 400 && scrolltop < 800) {
+            if (scrolltop >= box1 && scrolltop < box2) {
                 console.log('hi>400');
                 $('.box1').addClass('fixed');
+                $('.box2').removeClass('fixed');
 
             }
-            else if (scrolltop >= 800) {
+            else if (scrolltop >= box2) {
                 console.log('hi>800');
                 $('.box2').addClass('fixed');
-                $('.box1').removeClass('fixed');
+                // $('.box1').removeClass('fixed');
             }
 
 
         })
+
+
+
+        // $(window).on('scroll', function () {
+        //     console.log('scrolltop', $(this).scrollTop());
+        //     let scrolltop = $(this).scrollTop()
+
+        //     $('.box1').removeClass('fixed');
+        //     $('.box2').removeClass('fixed');
+
+        //     if (scrolltop >= 400 && scrolltop < 800) {
+        //         console.log('hi>400');
+        //         $('.box1').addClass('fixed');
+
+        //     }
+        //     else if (scrolltop >= 800) {
+        //         console.log('hi>800');
+        //         $('.box2').addClass('fixed');
+        //         $('.box1').removeClass('fixed');
+        //     }
+
+
+        // })
 
 
     </script>

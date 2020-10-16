@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <style>
+        .box {
+            width: 400px;
+            height: 200px;
+            background-color: #afa;
+            margin: 200px auto;
+
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>bounce</button>
+    <button>wobble</button>
+    <button>heartBeat</button>
+    <button>backInLeft</button>
+    <button>flipInX</button>
+    <div class="box ">
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        // $('button').click(function () {
+        //     $('.box').toggleClass('animate__animated animate__bounce')
+        // })
+
+
+        $('button').click(function () {
+            let animateBtn = 'animate__animated animate__' + $(this).text();
+
+            $(".box").addClass(animateBtn).one('animationend', function () {
+                $(this).removeClass(animateBtn);
+            });
+        })
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>svg animation</title>
+    <style>
+        #ai {
+            width: 30px;
+        }
+
+        body {
+            padding-top: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-width: 100px;
+        }
+
+
+
+        h3 {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            line-height: 5rem;
+            color: #eee;
+            opacity: 0;
+            animation: h3 .5s .6s;
+            animation-fill-mode: forwards;
+            text-align: center;
+        }
+
+        .circle {
+            stroke-dasharray: 1194;
+            stroke-dashoffset: 1194;
+            animation: circle .7s;
+            animation-fill-mode: forwards;
+
+        }
+
+        @keyframes circle {
+            0% {
+                stroke-dashoffset: 1194;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .polyline {
+            stroke-dasharray: 500;
+            stroke-dashoffset: 500;
+            animation: polyline .7s .5s;
+            animation-fill-mode: forwards;
+
+        }
+
+        @keyframes polyline {
+            0% {
+                stroke-dashoffset: 500;
+            }
+
+            100% {
+                stroke-dashoffset: 0;
+            }
+        }
+
+
+
+        @keyframes h3 {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+                color: #26bec9;
+            }
+        }
+
+        button {
+            position: absolute;
+            top: 700px;
+            padding: 10px 20px;
+        }
+
+        .wrapper {
+            display: none;
+        }
+
+        .wrapper1 {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <button>Click</button>
+    <div class="wrapper">
+        <svg width='400px' height="400px">
+            <circle class="circle" cx="200" cy="200" r="190" fill="none" stroke="#26bec9" stroke-width="20"
+                stroke-linecap="round" stroke-linejoin="round" transform="rotate(-110 200 200)" />
+            <polyline class="polyline" points="100,200 173,284 390,50" fill="none" stroke="#26bec9" stroke-width="20"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+        <h3>Payment Success</h3>
+    </div>
+
+
+    <!-- <svg id="ai" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 337.57 298">
+    <defs>
+        <style>
+            .cls-1 {
+                fill: none;
+                stroke: #000;
+                stroke-miterlimit: 10;
+                stroke-width: 20px;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+            }
+        </style>
+    </defs>
+    <g id="圖層_2" data-name="圖層 2">
+        <g id="圖層_1-2" data-name="圖層 1"></g>
+        <path
+            d="M149,20a129,129,0,0,1,91.22,220.22A129,129,0,0,1,57.78,57.78,128.18,128.18,0,0,1,149,20m0-20A149,149,0,1,0,298,149,149,149,0,0,0,149,0Z" />
+        <polyline class="cls-1" points="71 140.07 146.72 225.28 330.5 41.5" />
+    </g>
+
+</svg> -->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script>
+        $('button').on('click', function () {
+            $('.wrapper').toggleClass('wrapper1')
+
+        })
+
+            // $('button').on('click', function () {
+            //     $('.wrapper').addClass('wrapper1').one('animationend', function () {
+            //         $(this).removeClass('wrapper1');
+            //     })
+    </script>
+
+</body>
+
+</html>
